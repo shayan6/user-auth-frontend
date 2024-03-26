@@ -42,6 +42,7 @@ export class LoginComponent {
 
     this.http.post(apiUrl, this.signupObj).subscribe((response: any) => {
       alert('Signup successful');
+      console.log('Signup successful:', response);
       this.signIn();
       this.resetSignUpForm();
     }, error => {

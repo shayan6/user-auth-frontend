@@ -1,1 +1,196 @@
-<p>dashboard works!</p>
+<div class="container-sm">
+    <br/><br/><br/>
+    <div class="row">
+      <div class="col-sm-3 form-inline">
+        <label for="sortField">Sort by:</label>
+        <select class="form-control" id="sortField" onchange="applyFilters()">
+          <option value="LastName">Last Name</option>
+          <option value="FirstName">First Name</option>
+          <option value="DateOfBirth">Date of Birth</option>
+          <option value="Username">Username</option>
+          <option value="CreatedAt">CreatedAt</option>
+          <option value="UpdatedAt">UpdatedAt</option>
+        </select>
+      </div>
+      <div class="col-sm-3 form-inline">
+        <label for="sortOrder">Order:</label>
+        <select class="form-control" id="sortOrder" onchange="applyFilters()">
+          <option value="ASC">Ascending</option>
+          <option value="DESC">Descending</option>
+        </select>
+      </div>
+      <div class="col-sm-2 form-inline">
+        <label for="perPage">Limit:</label>
+        <select class="form-control" id="perPage" onchange="applyFilters()">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+        </select>
+      </div>
+      <div class="col-sm-4 form-inline">
+        <div class="filter-bar text-right">
+          <div class="element-search autosuggest-search-activator">
+            <input placeholder="Start typing to search..." />
+          </div>
+          <button
+            type="button"
+            class="btn btn-sm btn-primary"
+            data-toggle="modal"
+            data-target="#modalForm"
+            onclick='addData()'
+          >
+            Add Data
+          </button>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="container-fuild">
+      <!-- <div id="loader" style="display:none;">
+        <img src="loading.gif" alt="loading...">
+      </div> -->
+      <div class="thead">
+        <div class="row justify-content-md-center" id="row-thead">
+            <div class="col">
+                <h6>Image</h6>
+            </div>
+            <div class="col col-4">
+                <h6>Id</h6>
+            </div>
+            <div class="col">
+                <h6>Name</h6>
+            </div>
+            <div class="col">
+                <h6>Email</h6>
+            </div>
+            <div class="col">
+                <h6>Phone</h6>
+            </div>
+        </div>
+      </div>
+      <div class="tbody" id="tbody">
+        <div class="row justify-content-md-center" *ngFor="let user of users; let i = index">
+            <div class="col">
+              <img class="row-profile" src="assets/{{ i + 1 }}.png">
+            </div>
+            <div class="col col-4">
+              <p>{{ user.id }}</p>
+            </div>
+            <div class="col">
+              <p>{{ user.name }}</p>
+            </div>
+            <div class="col">
+              <p>{{ user.email }}</p>
+            </div>
+            <div class="col">
+              <p>{{ user.phone }}</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="modal fade bd-example-modal-lg"
+    id="modalForm"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Add Data</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="dataForm">
+            <div class="row">
+              <div class="col-sm-6" style="display: none;">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="ID"
+                    name="ID"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="FirstName"
+                    name="FirstName"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="LastName"
+                    name="LastName"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Username"
+                    name="Username"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Password"
+                    name="Password"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <div
+                    class="input-group date"
+                    id="datepicker"
+                    data-date-format="mm-dd-yyyy"
+                  >
+                    <input type="text" class="form-control" name="DateOfBirth" />
+                    <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-sm btn-secondary"
+            data-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="button" class="btn btn-sm btn-primary" onclick="$('#dataForm').submit()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
