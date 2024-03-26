@@ -3,7 +3,7 @@ import { HttpInterceptorFn } from '@angular/common/http';
 export const customInterceptor: HttpInterceptorFn = (req, next) => {
   debugger;
 
-  const myToken = localStorage.getItem('angular17token');
+  const myToken = localStorage.getItem('access_token');
 
   const cloneRequest =  req.clone({
     setHeaders:{

@@ -14,8 +14,8 @@
                 (focus)="setFocus(true)"
                 (blur)="setFocus(false)"
                 type="email"
-                [(ngModel)]="loginObj.EmailId"
-                name="EmailId"
+                [(ngModel)]="loginObj.email"
+                name="email"
                 required
               />
             </div>
@@ -28,7 +28,7 @@
                 (focus)="setFocus(true)"
                 (blur)="setFocus(false)"
                 type="password"
-                [(ngModel)]="loginObj.Password"
+                [(ngModel)]="loginObj.password"
                 name="Password"
                 required
               />
@@ -54,7 +54,7 @@
       <form action="#" class="sign-up-form">
         <h2 class="title">Sign up</h2>
         <div class="row">
-          <div class="col-sm-12 col-lg-12">
+          <div class="col-sm-12 col-lg-6">
             <div class="input-box required">
               <label class="input-label">Username</label>
               <input
@@ -64,11 +64,27 @@
                 (blur)="setFocus(false)"
                 id="username"
                 name="username"
+                [(ngModel)]="signupObj.name"
                 required="required"
               />
             </div>
           </div>
-          <div class="col-sm-12 col-lg-12">
+          <div class="col-sm-12 col-lg-6">
+            <div class="input-box required">
+              <label class="input-label">Phone</label>
+              <input
+                type="phone"
+                class="input-1"
+                (focus)="setFocus(true)"
+                (blur)="setFocus(false)"
+                id="phone"
+                name="phone"
+                [(ngModel)]="signupObj.phone"
+                required="required"
+              />
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-6">
             <div class="input-box required">
               <label class="input-label">Email</label>
               <input
@@ -78,11 +94,12 @@
                 (blur)="setFocus(false)"
                 id="email"
                 name="email"
+                [(ngModel)]="signupObj.email"
                 required="required"
               />
             </div>
           </div>
-          <div class="col-sm-12 col-lg-12">
+          <div class="col-sm-12 col-lg-6">
             <div class="input-box required">
               <label class="input-label">Password</label>
               <input
@@ -92,12 +109,15 @@
                 (blur)="setFocus(false)"
                 id="password"
                 name="password"
+                [(ngModel)]="signupObj.password"
                 required="required"
               />
             </div>
           </div>
         </div>
-        <input type="submit" class="btn" value="Sign up" />
+        <button class="btn solid" type="button" class="btn" (click)="onSignup()">
+          Sign up
+        </button>
         <p class="social-text">Or Sign up with social platforms</p>
         <div class="social-media">
           <a href="#" class="social-icon">
