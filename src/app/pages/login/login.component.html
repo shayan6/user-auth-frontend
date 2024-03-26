@@ -1,27 +1,55 @@
 <div class="tech-container">
   <div class="forms-container">
     <div class="signin-signup">
-      <form action="#">
-        <div class="input-box">
-          <input
-            type="email"
-            [(ngModel)]="loginObj.EmailId"
-            name="EmailId"
-            required
-          />
-          <label>Email</label>
+      <form action="#" class="sign-in-form">
+        <!-- <h2 class="title">Log in</h2> -->
+        <img src="assets/logo.png" width="220px" />
+        <br /><br />
+        <div class="row">
+          <div class="col-sm-12 col-lg-12">
+            <div class="input-box required">
+              <label class="input-label">Username</label>
+              <input
+                class="input-1"
+                (focus)="setFocus(true)"
+                (blur)="setFocus(false)"
+                type="email"
+                [(ngModel)]="loginObj.EmailId"
+                name="EmailId"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-12">
+            <div class="input-box required">
+              <label class="input-label">Password</label>
+              <input
+                class="input-1"
+                (focus)="setFocus(true)"
+                (blur)="setFocus(false)"
+                type="password"
+                [(ngModel)]="loginObj.Password"
+                name="Password"
+                required
+              />
+            </div>
+          </div>
         </div>
-        <div class="input-box">
-          <input
-            type="password"
-            [(ngModel)]="loginObj.Password"
-            name="Password"
-            required
-          />
-          <label>Password</label>
+        <button class="btn solid" type="button" class="btn" (click)="onLogin()">
+          Login
+        </button>
+        <p class="social-text">Or Log in with social platforms</p>
+        <div class="social-media">
+          <a href="#" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-icon g-signin2" data-onsuccess="onSignIn">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
         </div>
-
-        <button type="button" class="btn" (click)="onLogin()">Login</button>
       </form>
       <form action="#" class="sign-up-form">
         <h2 class="title">Sign up</h2>
@@ -29,19 +57,43 @@
           <div class="col-sm-12 col-lg-12">
             <div class="input-box required">
               <label class="input-label">Username</label>
-              <input type="username" class="input-1" id="username" name="username" required="required" />
+              <input
+                type="username"
+                class="input-1"
+                (focus)="setFocus(true)"
+                (blur)="setFocus(false)"
+                id="username"
+                name="username"
+                required="required"
+              />
             </div>
           </div>
           <div class="col-sm-12 col-lg-12">
             <div class="input-box required">
               <label class="input-label">Email</label>
-              <input type="email" class="input-1" id="email" name="email" required="required" />
+              <input
+                type="email"
+                class="input-1"
+                (focus)="setFocus(true)"
+                (blur)="setFocus(false)"
+                id="email"
+                name="email"
+                required="required"
+              />
             </div>
           </div>
           <div class="col-sm-12 col-lg-12">
             <div class="input-box required">
               <label class="input-label">Password</label>
-              <input type="password" class="input-1" id="password" name="password" required="required" />
+              <input
+                type="password"
+                class="input-1"
+                (focus)="setFocus(true)"
+                (blur)="setFocus(false)"
+                id="password"
+                name="password"
+                required="required"
+              />
             </div>
           </div>
         </div>
@@ -66,9 +118,7 @@
       <div class="content">
         <h3>Find The Job That Fits Your Life</h3>
         <br />
-        <button class="btn transparent" id="sign-up-btn">
-          Sign up
-        </button>
+        <button class="btn transparent" (click)="signUp()">Sign up</button>
       </div>
       <img src="assets/log.svg" class="image" alt="" />
     </div>
@@ -76,9 +126,7 @@
       <div class="content">
         <h3>Hello, what would you like to explore today?</h3>
         <br />
-        <button class="btn transparent" id="sign-in-btn">
-          Log in
-        </button>
+        <button class="btn transparent" (click)="signIn()">Log in</button>
       </div>
       <img src="assets/register.svg" class="image" alt="" />
     </div>

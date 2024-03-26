@@ -31,6 +31,29 @@ export class LoginComponent {
       }
     })
   }
+
+  // click event
+  
+  signUp() {
+    const container = document.querySelector('.tech-container');
+    container?.classList.add('sign-up-mode');
+  }
+
+  signIn() {
+    const container = document.querySelector('.tech-container');
+    container?.classList.remove('sign-up-mode');
+  }
+
+  setFocus(on: boolean) {
+    const element = document.activeElement as HTMLElement;
+    const parent = element.parentElement;
+    if (on) {
+      parent?.classList.add('focus');
+    } else {
+      parent?.classList.remove('focus');
+    }
+  }
+
 }
 
 export class Login { 
