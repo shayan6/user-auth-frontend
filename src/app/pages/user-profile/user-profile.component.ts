@@ -27,10 +27,10 @@ export class UserProfileComponent {
   }
 
   getUserById(id: string) {
-    this.http.get('http://localhost:3000/users' + id).subscribe((res:any) => {
+    this.http.get('http://localhost:3000/users/' + id).subscribe((res:any) => {
       this.user = res;
     } , error => {
-      alert("Error From API")
+      alert(JSON.stringify(error.error))
     })
   }
 
