@@ -13,8 +13,8 @@ import { FormsModule } from '@angular/forms';
 export class DashboardComponent implements OnInit {
 
 
-  users:any[]=[];
-  filteredUsers: any[] = [];
+  orders:any[]=[];
+  filteredorders: any[] = [];
   sortField: string = 'id';
   sortOrder: string = 'ASC';
   perPage: number = 10;
@@ -26,12 +26,12 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getAllusers();
+    this.getAllorders();
   }
 
   applyFilters() {
     
-    this.filteredUsers = this.users.sort((a, b) => {
+    this.filteredorders = this.orders.sort((a, b) => {
       if (this.sortOrder === 'ASC') {
         return a[this.sortField] > b[this.sortField] ? 1 : -1;
       } else {
@@ -41,12 +41,12 @@ export class DashboardComponent implements OnInit {
 
     if (this.searchQuery) {
       console.log(this.searchQuery);
-      this.filteredUsers = this.users.filter(user =>
+      this.filteredorders = this.orders.filter(user =>
         Object.values(user).some(value => value?.toString().toLowerCase().includes(this.searchQuery.toLowerCase()))
       );
     }
 
-    this.filteredUsers = this.filteredUsers.slice(0, this.perPage);
+    this.filteredorders = this.filteredorders.slice(0, this.perPage);
   }
 
   onSearchChange() {
@@ -61,10 +61,10 @@ export class DashboardComponent implements OnInit {
     this.applyFilters();
   }
 
-  getAllusers() {
+  getAllorders() {
     this.http.get('http://localhost:3000/users').subscribe((res:any) => {
-      this.users = res;
-      this.filteredUsers = res;
+      this.orders = res;
+      this.filteredorders = res;
     } , error => {
       alert("Error From API")
     })

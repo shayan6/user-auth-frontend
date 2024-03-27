@@ -56,21 +56,21 @@
         </div>
       </div>
       <div class="tbody" id="tbody">
-        <div class="row justify-content-md-center" *ngFor="let user of filteredUsers; let i = index">
+        <div class="row justify-content-md-center" *ngFor="let order of filteredorders; let i = index">
             <div class="col">
               <img class="row-profile" src="assets/{{ i + 1 }}.png">
             </div>
             <div class="col col-4">
-              <p>{{ user.id }}</p>
+              <p>{{ order.id }}</p>
             </div>
             <div class="col">
-              <p>{{ user.name }}</p>
+              <p>{{ order.name }}</p>
             </div>
             <div class="col">
-              <p>{{ user.email }}</p>
+              <p>{{ order.email }}</p>
             </div>
             <div class="col">
-              <p>{{ user.phone }}</p>
+              <p>{{ order.phone }}</p>
             </div>
           </div>
       </div>
