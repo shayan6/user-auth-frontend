@@ -1,6 +1,10 @@
-# Angular17Login
+# Fudy App Login and Register
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.0-next.0.
+
+![Screenshot 1](/src/assets/app.gif)
+*Screenshot of desktop*
+
 
 ## Development server
 
