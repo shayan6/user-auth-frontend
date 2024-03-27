@@ -15,6 +15,7 @@ export class LayoutComponent {
   }
 
   logoff() {
+    localStorage.clear();
     this.router.navigateByUrl('/login');
   }
 }

@@ -118,6 +118,10 @@
         <button class="btn solid" type="button" class="btn" (click)="onSignup()">
           Sign up
         </button>
+        <!-- Error message for username -->
+        <div *ngFor="let errorMessage of errorMessages" class="alert alert-danger" role="alert">
+          {{ errorMessage }}
+        </div>
         <p class="social-text">Or Sign up with social platforms</p>
         <div class="social-media">
           <a href="#" class="social-icon">
