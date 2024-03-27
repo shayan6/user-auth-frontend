@@ -11,12 +11,8 @@ body {
   color: #404040;
 }
 .wrapper {
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0, #62075c), color-stop(1, #c30eb8));
-  background: -webkit-linear-gradient(left bottom, #62075c 0, #c30eb8 100%);
-  background: -moz-linear-gradient(left bottom, #62075c 0, #c30eb8 100%);
-  background: -o-linear-gradient(left bottom, #62075c 0, #c30eb8 100%);
-  background: -ms-linear-gradient(left bottom, #62075c 0, #c30eb8 100%);
-  background: linear-gradient(left bottom, #62075c 0, #c30eb8 100%);
+  background: -webkit-linear-gradient(left bottom, #f4cb6e 0, #f1ae1c 100%);
+  background: linear-gradient(left bottom, #f4cb6e 0, #f1ae1c 100%);
   position: relative;
   z-index: 1;
 }
@@ -70,8 +66,8 @@ body {
 .avatar {
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  -webkit-box-shadow: 0 0 0 3px #c30eb8 , 0 0 0 8px #fff;
-  box-shadow: 0 0 0 3px #c30eb8 , 0 0 0 8px #fff;
+  -webkit-box-shadow: 0 0 0 3px #f1ae1c , 0 0 0 8px #fff;
+  box-shadow: 0 0 0 3px #f1ae1c , 0 0 0 8px #fff;
   top: -75px;
   margin-left: -75px;
   left: 50%;
@@ -177,7 +173,7 @@ h5 {
   color: #fff;
 }
 .followers-list > li.follow-list-item a:hover {
-  background: #c30eb8;
+  background: #f1ae1c;
 }
 .followers-list > li.follow-list-item .fa-plus {
   display: block;
@@ -214,7 +210,7 @@ h5 {
   transition: 0.2s;
 }
 .social-list > li > a:hover {
-  background: #c30eb8;
+  background: #f1ae1c;
   color: #fff;
 }
 .social-list > li > a:hover.fa-facebook {
